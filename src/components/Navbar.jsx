@@ -10,18 +10,26 @@ const Navbar = () => {
         <Link to="/" className="text-2xl font-bold text-indigo-600">
           MoodTrackr
         </Link>
-        <div className="flex items-center space-x-4">
+        <div className="space-x-4">
           {!user ? (
             <>
-              <Link to="/login" className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+              <Link to="/" className="text-gray-700 hover:text-indigo-600">
+                Home
+              </Link>
+              <Link
+                to="/login"
+                className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+              >
                 Login
               </Link>
             </>
           ) : (
             <>
-              <span className="text-gray-700 font-semibold">Welcome, {user.displayName || "User"}!</span>
               <Link to="/dashboard" className="text-gray-700 hover:text-indigo-600">
                 Dashboard
+              </Link>
+              <Link to="/community" className="text-gray-700 hover:text-indigo-600">
+                Communities
               </Link>
               <button
                 onClick={logout}

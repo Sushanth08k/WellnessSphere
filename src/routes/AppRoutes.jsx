@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
+import CommunityGroups from "../pages/CommunityGroups";
+import GroupChat from "../pages/GroupChat";
 import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRoutes = () => {
@@ -13,15 +15,9 @@ const AppRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* Protected Route: Only logged-in users can access Dashboard */}
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/community" element={<ProtectedRoute><CommunityGroups /></ProtectedRoute>} />
+        <Route path="/group/:groupId" element={<ProtectedRoute><GroupChat /></ProtectedRoute>} />
       </Routes>
     </Router>
   );
