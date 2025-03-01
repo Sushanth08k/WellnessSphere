@@ -1,36 +1,51 @@
 import { Link } from "react-router-dom";
-import { FaSmile, FaRobot, FaUsers, FaExclamationTriangle } from "react-icons/fa";
+import { FaSmile, FaRobot, FaUsers, FaExclamationTriangle, FaUserMd, FaUserPlus } from "react-icons/fa";
+import "./Dashboard.css"; // Import the CSS file
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
-      {/* App Name at the top */}
-      <h1 className="text-3xl font-bold text-indigo-600 mb-8">Mental Health App</h1>
+    <div className="dashboard-container">
+      {/* App Name */}
+      <h1 className="app-title">Mental Health Companion</h1>
 
-      {/* Icons Grid */}
-      <div className="grid grid-cols-2 gap-8">
+      {/* Icons - Grid Layout */}
+      <div className="dashboard-grid">
         {/* Mood Tracking */}
-        <Link to="/mood-tracking" className="dashboard-icon flex flex-col items-center p-4 rounded-lg hover:bg-indigo-100 transition">
-          <FaSmile size={50} className="text-indigo-500 hover:text-indigo-700 transition duration-200" />
-          <p className="mt-2 text-gray-700 text-lg font-semibold">Mood Tracking</p>
+        <Link to="/moodtracker" className="dashboard-icon mood">
+          <FaSmile className="icon mood" />
+          <p>Mood Tracking</p>
         </Link>
 
         {/* AI Friend */}
-        <Link to="/ai-friend" className="dashboard-icon flex flex-col items-center p-4 rounded-lg hover:bg-blue-100 transition">
-          <FaRobot size={50} className="text-blue-500 hover:text-blue-700 transition duration-200" />
-          <p className="mt-2 text-gray-700 text-lg font-semibold">AI Friend</p>
+        <Link to="/chatbot" className="dashboard-icon ai">
+          <FaRobot className="icon ai" />
+          <p>AI Friend</p>
         </Link>
 
         {/* Communities */}
-        <Link to="/community" className="dashboard-icon flex flex-col items-center p-4 rounded-lg hover:bg-green-100 transition">
-          <FaUsers size={50} className="text-green-500 hover:text-green-700 transition duration-200" />
-          <p className="mt-2 text-gray-700 text-lg font-semibold">Communities</p>
+        <Link to="/community" className="dashboard-icon community">
+          <FaUsers className="icon community" />
+          <p>Communities</p>
         </Link>
 
         {/* Emergency */}
-        <Link to="/emergency" className="dashboard-icon flex flex-col items-center p-4 rounded-lg hover:bg-red-100 transition">
-          <FaExclamationTriangle size={50} className="text-red-500 hover:text-red-700 transition duration-200" />
-          <p className="mt-2 text-gray-700 text-lg font-semibold">Emergency</p>
+        <Link to="/emergency" className="dashboard-icon emergency">
+          <div className="emergency-icon">
+            <FaExclamationTriangle className="icon emergency" />
+          </div>
+          <p>Emergency Help</p>
+        </Link>
+
+        {/* Professional Support */}
+        <Link to="/support" className="dashboard-icon support">
+          <FaUserMd className="icon support" />
+          <p>Professional Help</p>
+        </Link>
+
+        {/* Add Friend */}
+        <Link to="/addfriend" className="dashboard-icon add-friend">
+          <FaUserPlus className="icon add-friend" />
+          <p>Add Friend</p>
         </Link>
       </div>
     </div>
@@ -38,7 +53,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
-

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import "./Register.css"; // Import the CSS file
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -28,18 +29,18 @@ const Register = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Register</h2>
+    <div className="register-container">
+      <div className="register-box">
+        <h2 className="register-title">Register</h2>
 
-        <form onSubmit={handleRegister} className="space-y-4">
+        <form onSubmit={handleRegister}>
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="register-input"
           />
           <input
             type="password"
@@ -47,34 +48,28 @@ const Register = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="register-input"
           />
 
-          <button
-            type="submit"
-            className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300"
-          >
+          <button type="submit" className="register-button">
             Register
           </button>
         </form>
 
-        <div className="flex items-center my-4">
-          <hr className="flex-grow border-gray-300" />
-          <span className="px-2 text-gray-500">OR</span>
-          <hr className="flex-grow border-gray-300" />
+        <div className="register-divider">
+          <hr className="register-divider-line" />
+          <span className="register-or">OR</span>
+          <hr className="register-divider-line" />
         </div>
 
-        <button
-          onClick={handleGoogleSignIn}
-          className="w-full flex items-center justify-center gap-2 bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition duration-300"
-        >
+        <button onClick={handleGoogleSignIn} className="register-google">
           <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google" />
           Sign up with Google
         </button>
 
-        <p className="mt-4 text-center text-gray-600">
+        <p className="register-text">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600 hover:underline">
+          <a href="/login" className="register-link">
             Login here
           </a>
         </p>
@@ -84,3 +79,4 @@ const Register = () => {
 };
 
 export default Register;
+

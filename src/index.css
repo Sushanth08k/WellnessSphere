@@ -162,6 +162,84 @@ body {
   font-size: 1rem;
 }
 
+.dashboard-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Emergency Page Styles */
+.emergency-container {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.emergency-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.emergency-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.emergency-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Specific Button Styles */
+.call-button {
+  background-color: #dc2626;
+  color: white;
+}
+
+.sos-button {
+  background-color: #facc15;
+  color: black;
+}
+
+.contact-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.contact-button:hover {
+  background-color: #2563eb;
+}
+
+/* Trusted Contacts Section */
+.trusted-contacts {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-top: 2px solid #ddd;
+}
+
+.trusted-contacts h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
