@@ -6,44 +6,42 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* App Name */}
-      <h1 className="app-title">Mental Health Companion</h1>
+      <h1 className="app-title">Mental Health App</h1>
 
       {/* Icons - Grid Layout */}
       <div className="dashboard-grid">
         {/* Mood Tracking */}
-        <Link to="/moodtracker" className="dashboard-icon mood">
+        <Link to="/moodtracker" className="dashboard-icon">
           <FaSmile className="icon mood" />
           <p>Mood Tracking</p>
         </Link>
 
         {/* AI Friend */}
-        <Link to="/chatbot" className="dashboard-icon ai">
+        <Link to="/chatbot" className="dashboard-icon">
           <FaRobot className="icon ai" />
           <p>AI Friend</p>
         </Link>
 
         {/* Communities */}
-        <Link to="/community" className="dashboard-icon community">
+        <Link to="/community" className="dashboard-icon">
           <FaUsers className="icon community" />
           <p>Communities</p>
         </Link>
 
         {/* Emergency */}
-        <Link to="/emergency" className="dashboard-icon emergency">
-          <div className="emergency-icon">
-            <FaExclamationTriangle className="icon emergency" />
-          </div>
-          <p>Emergency Help</p>
+        <Link to="/emergency" className="dashboard-icon">
+          <FaExclamationTriangle className="icon emergency" />
+          <p>Emergency</p>
         </Link>
 
         {/* Professional Support */}
-        <Link to="/support" className="dashboard-icon support">
+        <Link to="/support" className="dashboard-icon">
           <FaUserMd className="icon support" />
-          <p>Professional Help</p>
+          <p>Professional Support</p>
         </Link>
 
         {/* Add Friend */}
-        <Link to="/addfriend" className="dashboard-icon add-friend">
+        <Link to="/addfriend" className="dashboard-icon">
           <FaUserPlus className="icon add-friend" />
           <p>Add Friend</p>
         </Link>

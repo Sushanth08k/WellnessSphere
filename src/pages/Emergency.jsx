@@ -15,7 +15,7 @@ const Emergency = () => {
         {/* Call Emergency Helpline */}
         <button 
           className="emergency-button call-button"
-          onClick={() => window.location.href = "tel:9392361766"}
+          onClick={() => window.location.href = "tel:9705112788"}
         >
           <Phone size={22} /> Call Emergency Helpline
         </button>
@@ -26,6 +26,7 @@ const Emergency = () => {
           onClick={() => alert("🚨 SOS Message Sent!")}
         >
           <MessageCircle size={22} /> Send SOS
+
         </button>
 
         {/* Manage Trusted Contacts */}

@@ -10,38 +10,38 @@ body, html {
   width: 100%;
   overflow-x: hidden;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3); /* Soft gradient */
 }
 
-/* Dashboard Container - Full Screen */
+/* Dashboard Container */
 .dashboard-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
   padding: 5vh 5vw;
+  background: url("https://www.transparenttextures.com/patterns/cubes.png"); /* Subtle pattern */
 }
 
 /* App Title */
 .app-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: #1a365d;
-  margin: 3vh 0 5vh;
+  margin-bottom: 4vh;
   text-align: center;
   letter-spacing: -0.5px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-/* Grid Layout for Icons */
+/* Grid Layout - 3 on Top, 3 on Bottom */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 4vh 3vw;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5vh 5vw;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  flex-grow: 1;
+  max-width: 1200px;
 }
 
 /* Individual Dashboard Icons */
@@ -50,17 +50,24 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.85); /* Slightly transparent */
   padding: 3vh 2vw;
-  border-radius: 16px;
+  border-radius: 20px;
   text-decoration: none;
   color: #333;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  aspect-ratio: 3/2;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  aspect-ratio: 1;
+  border: 2px solid rgba(226, 232, 240, 0.8);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+}
+
+/* Hover Effects */
+.dashboard-icon:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .dashboard-icon::before {
@@ -69,32 +76,27 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  opacity: 0.7;
+  height: 5px;
+  opacity: 0.8;
   transition: height 0.3s ease;
 }
 
-.dashboard-icon:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
 .dashboard-icon:hover::before {
-  height: 6px;
+  height: 8px;
 }
 
 /* Icon Styling */
 .icon {
-  font-size: 3.5rem;
-  margin-bottom: 2vh;
+  font-size: 4rem;
+  margin-bottom: 1.5vh;
   transition: transform 0.3s ease;
 }
 
 .dashboard-icon:hover .icon {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-/* Custom Colors for Icons and Top Borders */
+/* Custom Colors for Icons & Borders */
 .mood::before { background-color: #f39c12; }
 .ai::before { background-color: #8e44ad; }
 .community::before { background-color: #e74c3c; }
@@ -102,18 +104,17 @@ body, html {
 .support::before { background-color: #16a085; }
 .add-friend::before { background-color: #2980b9; }
 
-.mood { color: #f39c12; }         /* Mood Tracking - Yellow */
-.ai { color: #8e44ad; }           /* AI Friend - Purple */
-.community { color: #e74c3c; }    /* Communities - Red */
-.emergency { color: #d63031; }    /* Emergency - Dark Red */
-.support { color: #16a085; }      /* Professional Support - Teal */
-.add-friend { color: #2980b9; }   /* Add Friend - Blue */
+.mood { color: #f39c12; }
+.ai { color: #8e44ad; }
+.community { color: #e74c3c; }
+.emergency { color: #d63031; }
+.support { color: #16a085; }
+.add-friend { color: #2980b9; }
 
 /* Icon Text */
 .dashboard-icon p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin: 0;
   text-align: center;
   color: #2d3748;
   transition: color 0.3s ease;
@@ -123,47 +124,11 @@ body, html {
   color: #1a202c;
 }
 
-/* Badge for Emergency */
-.emergency-icon {
-  position: relative;
-}
-
-.emergency-icon::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  width: 12px;
-  height: 12px;
-  background-color: #d63031;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
 /* Responsive Adjustments */
-@media (min-width: 1600px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  
-  .icon {
-    font-size: 4rem;
-  }
-  
-  .dashboard-icon p {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 1200px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 900px) {
   .dashboard-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 4vh 4vw;
   }
 }
 
@@ -172,14 +137,14 @@ body, html {
     grid-template-columns: 1fr;
     gap: 3vh;
   }
-  
+
   .dashboard-icon {
     aspect-ratio: auto;
     padding: 4vh 4vw;
   }
-  
+
   .app-title {
-    font-size: 2rem;
-    margin: 2vh 0 4vh;
+    font-size: 2.3rem;
+    margin-bottom: 3vh;
   }
 }
